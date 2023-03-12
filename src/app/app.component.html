@@ -5,16 +5,16 @@
     <li><a href="about.asp">About</a></li>
 </ul> 
 
-<app-main-view-port>
+<app-main-view-port [whoIsVisible]="visibleChild">
     
 </app-main-view-port>
 
 <div class="dash-btn-group">
-    <button class="dashboard-btn">
+    <button class="dashboard-btn" (click)="setVisible('performance')">
         Performance
     </button>
     <div></div>
-    <button class="dashboard-btn">
+    <button class="dashboard-btn" (click)="setVisible('accounts')">
         Accounts
     </button>
 </div>

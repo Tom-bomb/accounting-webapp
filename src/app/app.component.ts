@@ -8,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'C.P.TOM';
+  visibleChild : string = 'performance';
+
+  setVisible(newVis: string) {
+    this.visibleChild = newVis;
+    console.log('New visible child is ' + newVis);
+  }
 }

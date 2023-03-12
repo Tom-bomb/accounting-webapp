@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./performance.component.scss']
 })
 export class PerformanceComponent {
-
+  
 }

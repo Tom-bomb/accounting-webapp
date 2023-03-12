@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Input, Component } from '@angular/core';
 
 @Component({
   selector: 'app-main-view-port',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./main-view-port.component.scss']
 })
 export class MainViewPortComponent {
-
+  // @Input() showPerformance = false;
+  @Input() whoIsVisible = 'performance';
 }
