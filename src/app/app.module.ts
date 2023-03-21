@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { AccountsComponent } from './accounts/accounts.component';
 import { MainViewPortComponent } from './main-view-port/main-view-port.component';
 import { PerformanceComponent } from './performance/performance.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTreeModule } from '@angular/material/tree';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -17,7 +20,10 @@ import { PerformanceComponent } from './performance/performance.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NoopAnimationsModule,
+    MatTreeModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

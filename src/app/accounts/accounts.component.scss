@@ -1,0 +1,72 @@
+tr:nth-child(even) {background-color: #5297c2;}
+
+tr:hover {background-color: coral;}
+
+table {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+.accounts-tree-invisible {
+    display: none;
+}
+
+.accounts-tree ul,
+.accounts-tree li {
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+/*
+* This padding sets alignment of the nested nodes.
+*/
+.accounts-tree .mat-nested-tree-node div[role=group] {
+    padding-left: 20px;
+    padding-top: 1px;
+    padding-bottom: 1px; 
+    margin-top: 1px;
+    margin-bottom: 1px; 
+}
+
+/*
+* Padding for leaf nodes.
+* Leaf nodes need to have padding so as to align with other non-leaf nodes
+* under the same parent.
+*/
+.accounts-tree div[role=group] > .mat-tree-node {
+    padding-left: 20px;
+    padding-top: 1px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+.mat-tree-node {
+    padding-top: 1px;
+    padding-bottom: 1px; 
+    margin-top: 1px;
+    margin-bottom: 1px;
+    min-height: 1px;
+}
+.toggle-boi {
+    width: 36px;
+    height: 30px;
+    background:rgb(187, 177, 177);
+    cursor:pointer;
+}
+
+.leaf-button {
+    background:rgb(187, 177, 177);
+    cursor:pointer;
+}
+
+.button-text {
+    padding-left: 5px;
+}

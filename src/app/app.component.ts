@@ -14,4 +14,7 @@ export class AppComponent {
     this.visibleChild = newVis;
     console.log('New visible child is ' + newVis);
   }
+  appClick(arg: string) {
+    console.log(arg);
+  }
 }

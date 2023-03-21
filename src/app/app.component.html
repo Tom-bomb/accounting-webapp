@@ -1,8 +1,8 @@
 <ul>
-    <li><a href="default.asp">Home</a></li>
-    <li><a href="news.asp">News</a></li>
-    <li><a href="contact.asp">Contact</a></li>
-    <li><a href="about.asp">About</a></li>
+    <li><a (click)="appClick('home')">Home</a></li>
+    <li><a (click)="appClick('news')">News</a></li>
+    <li><a (click)="appClick('contact')">Contact</a></li>
+    <li><a (click)="appClick('about')">About</a></li>
 </ul> 
 
 <app-main-view-port [whoIsVisible]="visibleChild">
