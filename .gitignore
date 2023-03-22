@@ -7,7 +7,7 @@
 /bazel-out
 
 # Node
-/client/node_modules/*
+/client/node_modules/**
 npm-debug.log
 yarn-error.log
 
@@ -42,4 +42,4 @@ testem.log
 Thumbs.db
 
 /server/target
-/client/.angular/*
+/client/.angular/**
