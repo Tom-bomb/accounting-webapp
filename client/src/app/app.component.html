@@ -1,0 +1,20 @@
+<ul>
+    <li><a (click)="appClick('home')">Home</a></li>
+    <li><a (click)="appClick('news')">News</a></li>
+    <li><a (click)="appClick('contact')">Contact</a></li>
+    <li><a (click)="appClick('about')">About</a></li>
+</ul> 
+
+<app-main-view-port [whoIsVisible]="visibleChild">
+    
+</app-main-view-port>
+
+<div class="dash-btn-group">
+    <button class="dashboard-btn" (click)="setVisible('performance')">
+        Performance
+    </button>
+    <div></div>
+    <button class="dashboard-btn" (click)="setVisible('accounts')">
+        Accounts
+    </button>
+</div>
