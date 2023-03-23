@@ -79,7 +79,8 @@ pub async fn hello(path: Path<(String,)>, pool: Data<DBPool>) -> HttpResponse {
             HttpResponse::Ok()
             .content_type("application/json")
             .json(transactions),
-        Error => HttpResponse::Ok()
+        Error => 
+            HttpResponse::Ok()
             .content_type("application/json")
             .json(Transactions::new()),
     }
