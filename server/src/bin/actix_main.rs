@@ -7,7 +7,7 @@ extern crate diesel;
 use std::{env, io, error};
 use dotenvy::dotenv;
 
-use actix_web::{web, get, App, HttpResponse, HttpServer, Responder, middleware};
+use actix_web::{web, get, App, http, HttpResponse, HttpServer, Responder, middleware};
 use diesel::r2d2::ConnectionManager;
 use diesel::PgConnection;
 use r2d2::{Pool, PooledConnection};
@@ -18,6 +18,7 @@ use self::models::*;
 use diesel::prelude::*;
 use server::*;
 use serde::{Deserialize, Serialize};
+use actix_cors::Cors;
 
 
 // mod constants;
@@ -100,11 +101,15 @@ async fn main() -> io::Result<()> {
         .expect("Failed to create pool");
 
     HttpServer::new(move || {
+        let cors = Cors::default()
+              .allow_any_origin();
+
         App::new()
             // Set up DB pool to be used with web::Data<Pool> extractor
             .data(pool.clone())
             // enable logger - always register actix-web Logger middleware last
             .wrap(middleware::Logger::default())
+            .wrap(cors)
             // register HTTP requests handlers
             .service(hello)
             // .service(tweet::get)
@@ -114,7 +119,7 @@ async fn main() -> io::Result<()> {
             // .service(like::plus_one)
             // .service(like::minus_one)
     })
-    .bind("0.0.0.0:9090")?
+    .bind("192.168.0.179:9090")?
     .run()
     .await
 }

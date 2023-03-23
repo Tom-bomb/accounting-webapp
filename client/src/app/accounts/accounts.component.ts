@@ -2,7 +2,7 @@ import { NestedTreeControl } from '@angular/cdk/tree';
 import { Component } from '@angular/core';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
 
-import { AccountsService, Transactions } from './accounts.service';
+import { AccountsService, Transactions, Transaction } from './accounts.service';
 
 /**
  * Account tree data with nested structure.
@@ -92,6 +92,7 @@ export class AccountsComponent {
 
   constructor(private accountsService: AccountsService) {
     this.dataSource.data = TREE_DATA;
+    this.accountsService = accountsService
   }
 
   hasChild = (_: number, node: AccountNode) => !!node.children && node.children.length > 0;
@@ -101,7 +102,7 @@ export class AccountsComponent {
     console.log('Node clicked is ' + acctName);
     this.accountsService.getTransactions()
       .subscribe({
-        next: (data: Transactions) => console.log(data), // success path
+        next: (data: Transactions) => console.log(data.Ok.results[0].accountnumber), // success path
         error: error => console.log('uhoh'), // error path
       });
   }

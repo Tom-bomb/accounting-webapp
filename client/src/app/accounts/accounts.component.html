@@ -1,6 +1,9 @@
 
-<mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="accounts-tree">
+<app-account-table [showTable]="visibleAcct != 'none'"></app-account-table>
+
+<mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="accounts-tree" *ngIf="visibleAcct == 'none'">
   <!-- This is the tree node template for leaf nodes -->
+
   <!-- There is inline padding applied to this node using styles.
     This padding value depends on the mat-icon-button width. -->
   <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle class="tom-leaf">
@@ -27,24 +30,3 @@
     </div>
   </mat-nested-tree-node>
 </mat-tree>
-
-  
- 
-
-<table *ngIf="visibleAcct != 'none'">
-    <tr>
-      <th>Company</th>
-      <th>Contact</th>
-      <th>Country</th>
-    </tr>
-    <tr>
-      <td>Alfreds Futterkiste</td>
-      <td>Maria Anders</td>
-      <td>Germany</td>
-    </tr>
-    <tr>
-      <td>Centro comercial Moctezuma</td>
-      <td>Francisco Chang</td>
-      <td>Mexico</td>
-    </tr>
-</table> 

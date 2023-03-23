@@ -5,7 +5,7 @@ import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
-export interface Transactions {
+export interface Transaction {
   id: number;
   transactiondate: string;
   accountnumber: number;
@@ -17,9 +17,15 @@ export interface Transactions {
   toaccount: string;
 }
 
+export interface Transactions {
+  Ok: {
+    results: [Transaction]
+  }
+}
+
 @Injectable()
 export class AccountsService {
-  accountsUrl = 'http://localhost:9090/derp/tomithy';
+  accountsUrl = 'http://192.168.0.179:9090/derp/tomithy';
 
   constructor(private http: HttpClient) { }
 

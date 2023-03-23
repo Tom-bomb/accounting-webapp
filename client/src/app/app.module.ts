@@ -9,6 +9,9 @@ import { PerformanceComponent } from './performance/performance.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatIconModule } from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
+import { AccountTableComponent } from './accounts/account-table/account-table.component';
+import { AccountRowComponent } from './accounts/account-row/account-row.component';
 
 
 @NgModule({
@@ -16,14 +19,17 @@ import { MatIconModule } from '@angular/material/icon';
     AppComponent,
     AccountsComponent,
     MainViewPortComponent,
-    PerformanceComponent
+    PerformanceComponent,
+    AccountTableComponent,
+    AccountRowComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
     MatTreeModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
