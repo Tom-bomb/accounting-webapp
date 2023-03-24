@@ -1,5 +1,7 @@
 
-<app-account-table [showTable]="visibleAcct != 'none'"></app-account-table>
+<app-account-table [showTable]="visibleAcct != 'none'">
+  
+</app-account-table>
 
 <mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="accounts-tree" *ngIf="visibleAcct == 'none'">
   <!-- This is the tree node template for leaf nodes -->
