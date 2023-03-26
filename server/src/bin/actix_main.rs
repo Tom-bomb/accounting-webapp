@@ -18,7 +18,8 @@ use self::models::*;
 use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
 use actix_cors::Cors;
-
+use plaid::PlaidClient;
+// use plaid::model::*;
 
 // mod constants;
 // mod like;
@@ -91,7 +92,7 @@ async fn main() -> io::Result<()> {
     dotenv().ok();
     env::set_var("RUST_LOG", "actix_web=debug,actix_server=info");
     env_logger::init();
-
+    let client = PlaidClient::from_env();
     // set up database connection pool
     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
     let manager = ConnectionManager::<PgConnection>::new(database_url);
