@@ -40,6 +40,17 @@ export class AccountTableComponent {
       },
       error: error => console.log('uhoh'), // error path
     });
+
+    this.accountsService.doPlaid()
+    .subscribe({
+      next: (data: any) => {
+        console.log('doPlaid worked!!!');
+        // console.log(data.Ok.results[0].accountnumber); // success path
+
+
+      },
+      error: error => console.log('uhoh'), // error path
+    });
   }
 
   ngAfterViewInit() {
@@ -68,11 +79,7 @@ export class AccountTableComponent {
       });
     });
 }
- doClickStuff(header: string, e: Event) {
 
-    console.log('I seen a click at ' + header);
-    console.log(e);
-}
 
     
 }

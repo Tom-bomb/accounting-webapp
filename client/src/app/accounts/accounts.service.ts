@@ -25,32 +25,24 @@ export interface Transactions {
 
 @Injectable()
 export class AccountsService {
-  accountsUrl = 'http://192.168.0.179:9090/derp/tomithy';
+  accountsUrl = 'http://192.168.0.179:9090';
 
   constructor(private http: HttpClient) { }
 
   getTransactions() {
-    return this.http.get<Transactions>(this.accountsUrl)
+    return this.http.get<Transactions>(this.accountsUrl + '/derp/tomithy')
       .pipe(
         retry(3), // retry a failed request up to 3 times
         catchError(this.handleError) // then handle the error
       );
   }
 
-  getTransactions_1() {
-    return this.http.get<Transactions>(this.accountsUrl);
-  }
-
-  getTransactions_2() {
-    // now returns an Observable of Config
-    return this.http.get<Transactions>(this.accountsUrl);
-  }
-
-  getTransactions_3() {
-    return this.http.get<Transactions>(this.accountsUrl)
-      .pipe(
-        catchError(this.handleError)
-      );
+  doPlaid() {
+    return this.http.get(this.accountsUrl + '/do/plaid')
+    .pipe(
+      retry(3), // retry a failed request up to 3 times
+      catchError(this.handleError) // then handle the error
+    );
   }
 
   getTransactionsResponse(): Observable<HttpResponse<Transactions>> {
