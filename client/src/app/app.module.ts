@@ -11,7 +11,6 @@ import { MatTreeModule } from '@angular/material/tree';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { AccountTableComponent } from './accounts/account-table/account-table.component';
-import { AccountRowComponent } from './accounts/account-row/account-row.component';
 
 
 @NgModule({
@@ -21,7 +20,6 @@ import { AccountRowComponent } from './accounts/account-row/account-row.componen
     MainViewPortComponent,
     PerformanceComponent,
     AccountTableComponent,
-    AccountRowComponent
   ],
   imports: [
     BrowserModule,

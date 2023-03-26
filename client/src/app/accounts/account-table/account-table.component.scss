@@ -1,10 +1,28 @@
+.table th {
+    position: relative;
+}
+
+.resizer {
+    /* Displayed at the right side of column */
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5px;
+    cursor: col-resize;
+    user-select: none;
+    height: 21px
+}
+
+.resizer:hover,
+.resizing {
+    border-right: 2px solid blue;
+}
+
+
 tr:nth-child(even) {background-color: #5297c2;}
 
 tr:hover {background-color: coral;}
 
-app-account-row:nth-child(even) {background-color: #5297c2;}
-
-app-account-row:hover {background-color: coral;}
 
 table {
     width: 100%;

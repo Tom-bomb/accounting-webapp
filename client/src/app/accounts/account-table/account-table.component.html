@@ -1,18 +1,51 @@
-<table *ngIf="showTable == true">
+<table #resizeMeh class="table">
     <tr>
-      <th *ngFor="let header of headers">
-        {{header}}
+      <th #header>
+        <div class="resizer"> </div>
+        id
+      </th>
+      <th #header>
+        Transaction Date
+        <div class="resizer"></div>
+      </th>
+      <th #header>
+        Account Number
+        <div class="resizer"></div>
+      </th>
+      <th #header>
+        Description
+        <div class="resizer"></div>
+      </th>
+      <th #header>
+        Vendor
+        <div class="resizer"></div>
+      </th>
+      <th #header>
+        Category
+        <div class="resizer"></div>
+      </th>
+      <th #header>
+        Transaction Type
+        <div class="resizer"></div>
+      </th>
+      <th #header>
+        fromaccount
+        <div class="resizer"></div>
+      </th>
+      <th #header>
+        toaccount
+        <div class="resizer"></div>
       </th>
     </tr>
-    <app-account-row *ngFor="let row of rows" [id]="row.id"
-                                              [transactiondate]="row.transactiondate"
-                                              [accountnumber]="row.accountnumber"
-                                              [description]="row.description"
-                                              [vendor]="row.vendor"
-                                              [category]="row.category"
-                                              [transactiontype]="row.transactiontype"
-                                              [fromaccount]="row.fromaccount"
-                                              [toaccount]="row.toaccount">
-
-    </app-account-row>
+    <tr *ngFor="let row of rows">
+      <td>{{row.id}}</td>
+      <td>{{row.transactiondate}}</td>
+      <td>{{row.accountnumber}}</td>
+      <td>{{row.description}}</td>
+      <td>{{row.vendor}}</td>
+      <td>{{row.category}}</td>
+      <td>{{row.transactiontype}}</td>
+      <td>{{row.fromaccount}}</td>
+      <td>{{row.toaccount}}</td>
+    </tr>
 </table> 

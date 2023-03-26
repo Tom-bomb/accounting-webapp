@@ -4,10 +4,10 @@ extern crate actix_web;
 #[macro_use]
 extern crate diesel;
 
-use std::{env, io, error};
+use std::{env, io};
 use dotenvy::dotenv;
 
-use actix_web::{web, get, App, http, HttpResponse, HttpServer, Responder, middleware};
+use actix_web::{web, get, App, http, HttpResponse, HttpServer, middleware};
 use diesel::r2d2::ConnectionManager;
 use diesel::PgConnection;
 use r2d2::{Pool, PooledConnection};
@@ -16,7 +16,6 @@ use actix_web::web::Path;
 use actix_web::web::Data;
 use self::models::*;
 use diesel::prelude::*;
-use server::*;
 use serde::{Deserialize, Serialize};
 use actix_cors::Cors;
 
