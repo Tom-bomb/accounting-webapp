@@ -1,0 +1,30 @@
+{
+    "Transactions" : [
+      {
+         "id" : "1",
+         "transactiondate" : "01301992",
+         "accountnumber" : "69420",
+         "description" : "first transaction",
+         "vendor" : "Toys R Us",
+         "category" : "toys",
+         "transactiontype" : 2,
+         "fromaccount" : "checking",
+         "toaccount" : "checking",
+         "amount" : 690.42,
+         "balance": 69.43
+      },
+      {
+         "id" : "2",
+         "transactiondate" : "01301993",
+         "accountnumber" : "69421",
+         "description" : "second transaction",
+         "vendor" : "Cabelas",
+         "category" : "toys",
+         "transactiontype" : 2,
+         "fromaccount" : "checking",
+         "toaccount" : "checking",
+         "amount" : -690.42,
+         "balance": 69.43
+      }
+    ]
+ }

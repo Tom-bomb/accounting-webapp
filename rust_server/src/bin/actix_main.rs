@@ -93,6 +93,12 @@ async fn main() -> io::Result<()> {
     env::set_var("RUST_LOG", "actix_web=debug,actix_server=info");
     env_logger::init();
     let client = PlaidClient::from_env();
+    let response = client
+        .item_application_list()
+        .access_token("your access token")
+        .send()
+        .await;
+    // println!("{:#?}", response);
     // set up database connection pool
     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
     let manager = ConnectionManager::<PgConnection>::new(database_url);

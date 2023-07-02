@@ -26,28 +26,11 @@ export class AccountTableComponent {
   ngOnInit() {
     this.accountsService.getTransactions()
     .subscribe({
-      next: (data: Transactions) => {
-        data.Ok.results.forEach(transact => {
-          const tmp = transact as Transaction;
-          this.rows.push(tmp);
-          console.log("I pushed something");
-          
-          console.log(tmp.category);
-        });
-        // console.log(data.Ok.results[0].accountnumber); // success path
-
-
-      },
-      error: error => console.log('uhoh'), // error path
-    });
-
-    this.accountsService.doPlaid()
-    .subscribe({
       next: (data: any) => {
-        console.log('doPlaid worked!!!');
-        // console.log(data.Ok.results[0].accountnumber); // success path
-
-
+        let datas = data.Transactions as Transaction[];
+        datas.forEach(item => {
+          this.rows.push(item);
+        });
       },
       error: error => console.log('uhoh'), // error path
     });

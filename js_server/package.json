@@ -1,0 +1,19 @@
+{
+  "name": "js_server",
+  "version": "1.0.0",
+  "description": "backend for finance app",
+  "main": "server.js",
+  "scripts": {
+    "test": "derp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "accounting-webapp"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}

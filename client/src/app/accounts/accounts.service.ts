@@ -15,6 +15,8 @@ export interface Transaction {
   transactiontype: number;
   fromaccount: string;
   toaccount: string;
+  amount: number;
+  balance: number;
 }
 
 export interface Transactions {
@@ -23,27 +25,22 @@ export interface Transactions {
   }
 }
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AccountsService {
-  accountsUrl = 'http://192.168.0.179:9090';
+  accountsUrl = 'http://192.168.0.193:8081';
 
   constructor(private http: HttpClient) { }
 
   getTransactions() {
-    return this.http.get<Transactions>(this.accountsUrl + '/derp/tomithy')
+    return this.http.get<Transactions>(this.accountsUrl + '/transactions')
       .pipe(
         retry(3), // retry a failed request up to 3 times
         catchError(this.handleError) // then handle the error
       );
   }
 
-  doPlaid() {
-    return this.http.get(this.accountsUrl + '/do/plaid')
-    .pipe(
-      retry(3), // retry a failed request up to 3 times
-      catchError(this.handleError) // then handle the error
-    );
-  }
 
   getTransactionsResponse(): Observable<HttpResponse<Transactions>> {
     return this.http.get<Transactions>(
@@ -72,10 +69,3 @@ export class AccountsService {
   }
 
 }
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/

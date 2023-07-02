@@ -8,6 +8,7 @@
 
 # Node
 /client/node_modules/**
+/js_server/node_modules/**
 npm-debug.log
 yarn-error.log
 
@@ -41,6 +42,7 @@ testem.log
 .DS_Store
 Thumbs.db
 
-/server/target
+/rust_server/target
 /client/.angular/**
 /secrets
+*.env

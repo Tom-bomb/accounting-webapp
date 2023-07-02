@@ -11,6 +11,7 @@ import { MatTreeModule } from '@angular/material/tree';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { AccountTableComponent } from './accounts/account-table/account-table.component';
+import { AccountsService } from './accounts/accounts.service';
 
 
 @NgModule({
@@ -29,7 +30,7 @@ import { AccountTableComponent } from './accounts/account-table/account-table.co
     MatIconModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [AccountsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

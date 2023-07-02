@@ -36,6 +36,14 @@
         toaccount
         <div class="resizer"></div>
       </th>
+      <th #header>
+        amount
+        <div class="resizer"></div>
+      </th>
+      <th #header>
+        balance
+        <div class="resizer"></div>
+      </th>
     </tr>
     <tr *ngFor="let row of rows">
       <td>{{row.id}}</td>
@@ -47,5 +55,7 @@
       <td>{{row.transactiontype}}</td>
       <td>{{row.fromaccount}}</td>
       <td>{{row.toaccount}}</td>
+      <td>{{row.amount}}</td>
+      <td>{{row.balance}}</td>
     </tr>
 </table> 
